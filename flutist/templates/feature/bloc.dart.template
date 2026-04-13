@@ -1,0 +1,17 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '{{name | snake_case}}_event.dart';
+import '{{name | snake_case}}_state.dart';
+
+class {{name | pascal_case}}Bloc
+    extends Bloc<{{name | pascal_case}}Event, {{name | pascal_case}}State> {
+  {{name | pascal_case}}Bloc() : super({{name | pascal_case}}Initial()) {
+    on<{{name | pascal_case}}Started>(_onStarted);
+  }
+
+  Future<void> _onStarted(
+    {{name | pascal_case}}Started event,
+    Emitter<{{name | pascal_case}}State> emit,
+  ) async {
+    // TODO: implement
+  }
+}
