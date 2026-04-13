@@ -4,7 +4,7 @@ import '{{name | snake_case}}_state.dart';
 
 class {{name | pascal_case}}Bloc
     extends Bloc<{{name | pascal_case}}Event, {{name | pascal_case}}State> {
-  {{name | pascal_case}}Bloc() : super({{name | pascal_case}}Initial()) {
+  {{name | pascal_case}}Bloc() : super(const {{name | pascal_case}}Initial()) {
     on<{{name | pascal_case}}Started>(_onStarted);
   }
 

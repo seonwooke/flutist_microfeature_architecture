@@ -1,0 +1,3 @@
+sealed class {{name | pascal_case}}Event {}
+
+final class {{name | pascal_case}}Started extends {{name | pascal_case}}Event {}
