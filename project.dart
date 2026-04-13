@@ -7,80 +7,53 @@ import 'package.dart';
 
 final project = Project(
   name: 'flutist_microfeature_architecture_v3',
-  options: const ProjectOptions(),
+  options: const ProjectOptions(
+    compositionRoots: ['app'],
+  ),
   modules: [
-    Module(
-      name: 'app',
-      dependencies: [
-        // Example)
-        // package.dependencies.intl,
-      ],
-      devDependencies: [
-        // Example)
-        // package.dependencies.test,
-      ],
-      modules: [
-        // Example)
-        // package.modules.login,
-      ],
-    ),
+    // ── network (lite) ───────────────────────────────────
     Module(
       name: 'network_interface',
-      dependencies: [],
-      devDependencies: [],
-      modules: [],
+      dependencies: [package.dependencies.equatable],
     ),
     Module(
       name: 'network_implementation',
-      dependencies: [],
-      devDependencies: [],
-      modules: [
-        package.modules.networkInterface,
-      ],
+      dependencies: [package.dependencies.dio],
+      modules: [package.modules.networkInterface],
     ),
     Module(
       name: 'network_testing',
-      dependencies: [],
-      devDependencies: [],
-      modules: [
-        package.modules.networkInterface,
-      ],
+      devDependencies: [package.dependencies.mocktail],
+      modules: [package.modules.networkInterface],
     ),
     Module(
       name: 'network_tests',
-      dependencies: [],
-      devDependencies: [],
       modules: [
         package.modules.networkImplementation,
         package.modules.networkTesting,
       ],
     ),
+
+    // ── product (micro) ───────────────────────────────────
     Module(
       name: 'product_interface',
-      dependencies: [],
-      devDependencies: [],
-      modules: [],
+      modules: [package.modules.networkInterface],
     ),
     Module(
       name: 'product_implementation',
-      dependencies: [],
-      devDependencies: [],
+      dependencies: [package.dependencies.flutterBloc],
       modules: [
         package.modules.productInterface,
+        package.modules.networkInterface,
       ],
     ),
     Module(
       name: 'product_testing',
-      dependencies: [],
-      devDependencies: [],
-      modules: [
-        package.modules.productInterface,
-      ],
+      devDependencies: [package.dependencies.mocktail],
+      modules: [package.modules.productInterface],
     ),
     Module(
       name: 'product_tests',
-      dependencies: [],
-      devDependencies: [],
       modules: [
         package.modules.productImplementation,
         package.modules.productTesting,
@@ -88,39 +61,32 @@ final project = Project(
     ),
     Module(
       name: 'product_example',
-      dependencies: [],
-      devDependencies: [],
       modules: [
         package.modules.productImplementation,
         package.modules.productTesting,
       ],
     ),
+
+    // ── cart (micro) ──────────────────────────────────────
     Module(
       name: 'cart_interface',
-      dependencies: [],
-      devDependencies: [],
-      modules: [],
+      modules: [package.modules.networkInterface],
     ),
     Module(
       name: 'cart_implementation',
-      dependencies: [],
-      devDependencies: [],
+      dependencies: [package.dependencies.flutterBloc],
       modules: [
         package.modules.cartInterface,
+        package.modules.networkInterface,
       ],
     ),
     Module(
       name: 'cart_testing',
-      dependencies: [],
-      devDependencies: [],
-      modules: [
-        package.modules.cartInterface,
-      ],
+      devDependencies: [package.dependencies.mocktail],
+      modules: [package.modules.cartInterface],
     ),
     Module(
       name: 'cart_tests',
-      dependencies: [],
-      devDependencies: [],
       modules: [
         package.modules.cartImplementation,
         package.modules.cartTesting,
@@ -128,11 +94,19 @@ final project = Project(
     ),
     Module(
       name: 'cart_example',
-      dependencies: [],
-      devDependencies: [],
       modules: [
         package.modules.cartImplementation,
         package.modules.cartTesting,
+      ],
+    ),
+
+    // ── app (composition root) ────────────────────────────
+    Module(
+      name: 'app',
+      modules: [
+        package.modules.productImplementation,
+        package.modules.cartImplementation,
+        package.modules.networkImplementation,
       ],
     ),
   ],

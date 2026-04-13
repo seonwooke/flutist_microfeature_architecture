@@ -10,4 +10,7 @@ dependencies:
   product_interface:
     path: ../product_interface
 
+dev_dependencies:
+  mocktail: ^1.0.3
+
 resolution: workspace

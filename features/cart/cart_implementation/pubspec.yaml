@@ -9,7 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.4
   cart_interface:
     path: ../cart_interface
+  network_interface:
+    path: ../../../packages/network/network_interface
 
 resolution: workspace

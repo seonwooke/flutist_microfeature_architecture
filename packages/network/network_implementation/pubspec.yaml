@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dio: ^5.4.0
   network_interface:
     path: ../network_interface
 

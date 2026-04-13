@@ -8,5 +8,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  product_implementation:
+    path: ../features/product/product_implementation
+  cart_implementation:
+    path: ../features/cart/cart_implementation
+  network_implementation:
+    path: ../packages/network/network_implementation
 
 resolution: workspace

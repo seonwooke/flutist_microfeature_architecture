@@ -10,4 +10,7 @@ dependencies:
   cart_interface:
     path: ../cart_interface
 
+dev_dependencies:
+  mocktail: ^1.0.3
+
 resolution: workspace

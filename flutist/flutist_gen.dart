@@ -45,4 +45,6 @@ extension PackageModulesX on List<Module> {
   Module get cartTests => firstWhere((m) => m.name == 'cart_tests');
   /// Module getter for cart_example
   Module get cartExample => firstWhere((m) => m.name == 'cart_example');
+  /// Module getter for app
+  Module get app => firstWhere((m) => m.name == 'app');
 }
