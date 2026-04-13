@@ -12,4 +12,7 @@ dependencies:
   network_testing:
     path: ../network_testing
 
+dev_dependencies:
+  test: ^1.24.0
+
 resolution: workspace

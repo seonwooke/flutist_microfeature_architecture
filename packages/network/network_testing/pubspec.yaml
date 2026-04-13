@@ -6,7 +6,7 @@ publish_to: 'none'
 environment:
   sdk: ">=3.5.0 <4.0.0"
 
-dependencies: 
+dependencies:
   network_interface:
     path: ../network_interface
 

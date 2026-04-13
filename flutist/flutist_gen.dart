@@ -13,6 +13,8 @@ extension PackageDependenciesX on List<Dependency> {
   Dependency get equatable => firstWhere((d) => d.name == 'equatable');
   /// Dependency getter for mocktail
   Dependency get mocktail => firstWhere((d) => d.name == 'mocktail');
+  /// Dependency getter for test
+  Dependency get test => firstWhere((d) => d.name == 'test');
 }
 
 /// Extension for package.modules.xxx access

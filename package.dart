@@ -7,6 +7,7 @@ final package = Package(
     Dependency(name: 'flutter_bloc', version: '^8.1.4'),
     Dependency(name: 'equatable', version: '^2.0.5'),
     Dependency(name: 'mocktail', version: '^1.0.3'),
+    Dependency(name: 'test', version: '^1.24.0'),
   ],
   modules: [
     // Modules are auto-registered when you run flutist create

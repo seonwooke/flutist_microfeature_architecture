@@ -1,3 +1,5 @@
+import 'package:cart_interface/cart_interface.dart';
+
 sealed class CartState {
   const CartState();
 }
@@ -11,7 +13,8 @@ final class CartLoading extends CartState {
 }
 
 final class CartSuccess extends CartState {
-  const CartSuccess();
+  const CartSuccess(this.cart);
+  final Cart cart;
 }
 
 final class CartFailure extends CartState {

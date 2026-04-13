@@ -14,7 +14,6 @@ final project = Project(
     // ── network (lite) ───────────────────────────────────
     Module(
       name: 'network_interface',
-      dependencies: [package.dependencies.equatable],
     ),
     Module(
       name: 'network_implementation',
@@ -28,6 +27,7 @@ final project = Project(
     ),
     Module(
       name: 'network_tests',
+      devDependencies: [package.dependencies.test],
       modules: [
         package.modules.networkImplementation,
         package.modules.networkTesting,
@@ -37,6 +37,7 @@ final project = Project(
     // ── product (micro) ───────────────────────────────────
     Module(
       name: 'product_interface',
+      dependencies: [package.dependencies.equatable],
       modules: [package.modules.networkInterface],
     ),
     Module(
@@ -54,6 +55,7 @@ final project = Project(
     ),
     Module(
       name: 'product_tests',
+      devDependencies: [package.dependencies.test],
       modules: [
         package.modules.productImplementation,
         package.modules.productTesting,
@@ -87,6 +89,7 @@ final project = Project(
     ),
     Module(
       name: 'cart_tests',
+      devDependencies: [package.dependencies.test],
       modules: [
         package.modules.cartImplementation,
         package.modules.cartTesting,
