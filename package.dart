@@ -9,5 +9,9 @@ final package = Package(
   ],
   modules: [
     // Modules are auto-registered when you run flutist create
+    Module(name: 'network_interface'),
+    Module(name: 'network_implementation'),
+    Module(name: 'network_testing'),
+    Module(name: 'network_tests'),
   ],
 );

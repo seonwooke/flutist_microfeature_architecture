@@ -24,5 +24,36 @@ final project = Project(
         // package.modules.login,
       ],
     ),
+    Module(
+      name: 'network_interface',
+      dependencies: [],
+      devDependencies: [],
+      modules: [],
+    ),
+    Module(
+      name: 'network_implementation',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.networkInterface,
+      ],
+    ),
+    Module(
+      name: 'network_testing',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.networkInterface,
+      ],
+    ),
+    Module(
+      name: 'network_tests',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.networkImplementation,
+        package.modules.networkTesting,
+      ],
+    ),
   ],
 );

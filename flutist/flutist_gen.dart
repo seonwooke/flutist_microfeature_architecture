@@ -13,4 +13,12 @@ extension PackageDependenciesX on List<Dependency> {
 
 /// Extension for package.modules.xxx access
 extension PackageModulesX on List<Module> {
+  /// Module getter for network_interface
+  Module get networkInterface => firstWhere((m) => m.name == 'network_interface');
+  /// Module getter for network_implementation
+  Module get networkImplementation => firstWhere((m) => m.name == 'network_implementation');
+  /// Module getter for network_testing
+  Module get networkTesting => firstWhere((m) => m.name == 'network_testing');
+  /// Module getter for network_tests
+  Module get networkTests => firstWhere((m) => m.name == 'network_tests');
 }

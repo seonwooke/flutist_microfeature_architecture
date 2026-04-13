@@ -18,3 +18,7 @@ dependencies:
 # All packages inside the 'packages' directory will be managed together
 workspace:
   - app
+  - packages/network/network_interface
+  - packages/network/network_implementation
+  - packages/network/network_tests
+  - packages/network/network_testing
