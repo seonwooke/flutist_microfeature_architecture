@@ -1,0 +1,10 @@
+import 'package:flutter/material.dart';
+
+class {{name | pascal_case}}Widget extends StatelessWidget {
+  const {{name | pascal_case}}Widget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}

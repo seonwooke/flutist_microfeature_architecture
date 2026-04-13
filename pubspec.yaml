@@ -1,0 +1,20 @@
+name: flutist_microfeature_architecture_v3
+description: A new Flutter project managed by Flutist.
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutist:
+    path: /Users/seonwookkim/Documents/projects/flutist/flutist
+  app:
+    path: app
+
+# Flutter Native Workspace configuration
+# All packages inside the 'packages' directory will be managed together
+workspace:
+  - app
