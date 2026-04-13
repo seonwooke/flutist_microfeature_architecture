@@ -55,5 +55,45 @@ final project = Project(
         package.modules.networkTesting,
       ],
     ),
+    Module(
+      name: 'product_interface',
+      dependencies: [],
+      devDependencies: [],
+      modules: [],
+    ),
+    Module(
+      name: 'product_implementation',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.productInterface,
+      ],
+    ),
+    Module(
+      name: 'product_testing',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.productInterface,
+      ],
+    ),
+    Module(
+      name: 'product_tests',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.productImplementation,
+        package.modules.productTesting,
+      ],
+    ),
+    Module(
+      name: 'product_example',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.productImplementation,
+        package.modules.productTesting,
+      ],
+    ),
   ],
 );

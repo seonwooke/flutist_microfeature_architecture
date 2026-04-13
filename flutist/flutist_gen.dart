@@ -21,4 +21,14 @@ extension PackageModulesX on List<Module> {
   Module get networkTesting => firstWhere((m) => m.name == 'network_testing');
   /// Module getter for network_tests
   Module get networkTests => firstWhere((m) => m.name == 'network_tests');
+  /// Module getter for product_interface
+  Module get productInterface => firstWhere((m) => m.name == 'product_interface');
+  /// Module getter for product_implementation
+  Module get productImplementation => firstWhere((m) => m.name == 'product_implementation');
+  /// Module getter for product_testing
+  Module get productTesting => firstWhere((m) => m.name == 'product_testing');
+  /// Module getter for product_tests
+  Module get productTests => firstWhere((m) => m.name == 'product_tests');
+  /// Module getter for product_example
+  Module get productExample => firstWhere((m) => m.name == 'product_example');
 }

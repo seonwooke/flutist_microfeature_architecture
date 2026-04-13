@@ -13,5 +13,10 @@ final package = Package(
     Module(name: 'network_implementation'),
     Module(name: 'network_testing'),
     Module(name: 'network_tests'),
+    Module(name: 'product_interface'),
+    Module(name: 'product_implementation'),
+    Module(name: 'product_testing'),
+    Module(name: 'product_tests'),
+    Module(name: 'product_example'),
   ],
 );

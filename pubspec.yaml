@@ -22,3 +22,8 @@ workspace:
   - packages/network/network_implementation
   - packages/network/network_tests
   - packages/network/network_testing
+  - features/product/product_example
+  - features/product/product_interface
+  - features/product/product_implementation
+  - features/product/product_tests
+  - features/product/product_testing
