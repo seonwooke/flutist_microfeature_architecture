@@ -9,5 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  product_interface:
+    path: ../product_interface
 
 resolution: workspace

@@ -7,5 +7,9 @@ environment:
   sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
+  product_implementation:
+    path: ../product_implementation
+  product_testing:
+    path: ../product_testing
 
 resolution: workspace

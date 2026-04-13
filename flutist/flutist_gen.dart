@@ -5,10 +5,14 @@ import 'package:flutist/flutist.dart';
 
 /// Extension for package.dependencies.xxx access
 extension PackageDependenciesX on List<Dependency> {
-  /// Dependency getter for intl
-  Dependency get intl => firstWhere((d) => d.name == 'intl');
-  /// Dependency getter for test
-  Dependency get test => firstWhere((d) => d.name == 'test');
+  /// Dependency getter for dio
+  Dependency get dio => firstWhere((d) => d.name == 'dio');
+  /// Dependency getter for flutter_bloc
+  Dependency get flutterBloc => firstWhere((d) => d.name == 'flutter_bloc');
+  /// Dependency getter for equatable
+  Dependency get equatable => firstWhere((d) => d.name == 'equatable');
+  /// Dependency getter for mocktail
+  Dependency get mocktail => firstWhere((d) => d.name == 'mocktail');
 }
 
 /// Extension for package.modules.xxx access

@@ -9,5 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  network_interface:
+    path: ../network_interface
 
 resolution: workspace

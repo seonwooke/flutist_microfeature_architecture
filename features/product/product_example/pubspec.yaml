@@ -9,5 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  product_implementation:
+    path: ../product_implementation
+  product_testing:
+    path: ../product_testing
 
 resolution: workspace

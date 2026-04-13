@@ -7,5 +7,9 @@ environment:
   sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
+  network_implementation:
+    path: ../network_implementation
+  network_testing:
+    path: ../network_testing
 
 resolution: workspace

@@ -3,9 +3,10 @@ import 'package:flutist/flutist.dart';
 final package = Package(
   name: 'flutist_microfeature_architecture_v3',
   dependencies: [
-    // Example)
-    // Dependency(name: 'intl', version: '^20.2.0'),
-    // Dependency(name: 'test', version: '^1.28.0'),
+    Dependency(name: 'dio', version: '^5.4.0'),
+    Dependency(name: 'flutter_bloc', version: '^8.1.4'),
+    Dependency(name: 'equatable', version: '^2.0.5'),
+    Dependency(name: 'mocktail', version: '^1.0.3'),
   ],
   modules: [
     // Modules are auto-registered when you run flutist create
