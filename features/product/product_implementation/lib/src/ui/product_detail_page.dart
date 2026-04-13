@@ -7,9 +7,14 @@ import '../bloc/product_detail/product_detail_event.dart';
 import '../bloc/product_detail/product_detail_state.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  const ProductDetailPage({super.key, required this.productId});
+  const ProductDetailPage({
+    super.key,
+    required this.productId,
+    this.onAddToCart,
+  });
 
   final String productId;
+  final void Function(Product)? onAddToCart;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +22,15 @@ class ProductDetailPage extends StatelessWidget {
       create: (context) =>
           ProductDetailBloc(repository: context.read<ProductRepository>())
             ..add(ProductDetailStarted(productId)),
-      child: const _ProductDetailView(),
+      child: _ProductDetailView(onAddToCart: onAddToCart),
     );
   }
 }
 
 class _ProductDetailView extends StatelessWidget {
-  const _ProductDetailView();
+  const _ProductDetailView({this.onAddToCart});
+
+  final void Function(Product)? onAddToCart;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +43,7 @@ class _ProductDetailView extends StatelessWidget {
             ProductDetailLoading() =>
               const Center(child: CircularProgressIndicator()),
             ProductDetailSuccess(product: final product) =>
-              _ProductDetail(product: product),
+              _ProductDetail(product: product, onAddToCart: onAddToCart),
             ProductDetailFailure(message: final message) =>
               Center(child: Text('Error: $message')),
           };
@@ -47,9 +54,10 @@ class _ProductDetailView extends StatelessWidget {
 }
 
 class _ProductDetail extends StatelessWidget {
-  const _ProductDetail({required this.product});
+  const _ProductDetail({required this.product, this.onAddToCart});
 
   final Product product;
+  final void Function(Product)? onAddToCart;
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +88,16 @@ class _ProductDetail extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(product.description),
+          const SizedBox(height: 24),
+          if (onAddToCart != null)
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: () => onAddToCart!(product),
+                icon: const Icon(Icons.add_shopping_cart),
+                label: const Text('Add to Cart'),
+              ),
+            ),
         ],
       ),
     );

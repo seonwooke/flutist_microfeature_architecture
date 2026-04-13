@@ -51,9 +51,20 @@ class _ShopShellState extends State<_ShopShell> {
     return Scaffold(
       body: IndexedStack(
         index: _index,
-        children: const [
-          ProductListPage(),
-          CartPage(),
+        children: [
+          ProductListPage(
+            onAddToCart: (product) => context.read<CartBloc>().add(
+                  CartItemAdded(
+                    CartItem(
+                      productId: product.id,
+                      name: product.name,
+                      price: product.price,
+                      quantity: 1,
+                    ),
+                  ),
+                ),
+          ),
+          const CartPage(),
         ],
       ),
       bottomNavigationBar: NavigationBar(

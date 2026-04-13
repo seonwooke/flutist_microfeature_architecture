@@ -8,7 +8,9 @@ import '../bloc/product_list/product_list_state.dart';
 import 'product_detail_page.dart';
 
 class ProductListPage extends StatelessWidget {
-  const ProductListPage({super.key});
+  const ProductListPage({super.key, this.onAddToCart});
+
+  final void Function(Product)? onAddToCart;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +18,15 @@ class ProductListPage extends StatelessWidget {
       create: (context) =>
           ProductListBloc(repository: context.read<ProductRepository>())
             ..add(ProductListStarted()),
-      child: const _ProductListView(),
+      child: _ProductListView(onAddToCart: onAddToCart),
     );
   }
 }
 
 class _ProductListView extends StatelessWidget {
-  const _ProductListView();
+  const _ProductListView({this.onAddToCart});
+
+  final void Function(Product)? onAddToCart;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +48,7 @@ class _ProductListView extends StatelessWidget {
             ProductListLoading() =>
               const Center(child: CircularProgressIndicator()),
             ProductListSuccess(products: final products) =>
-              _ProductList(products: products),
+              _ProductList(products: products, onAddToCart: onAddToCart),
             ProductListFailure(message: final message) =>
               Center(child: Text('Error: $message')),
           };
@@ -55,9 +59,10 @@ class _ProductListView extends StatelessWidget {
 }
 
 class _ProductList extends StatelessWidget {
-  const _ProductList({required this.products});
+  const _ProductList({required this.products, this.onAddToCart});
 
   final List<Product> products;
+  final void Function(Product)? onAddToCart;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +80,10 @@ class _ProductList extends StatelessWidget {
               MaterialPageRoute<void>(
                 builder: (_) => BlocProvider.value(
                   value: context.read<ProductListBloc>(),
-                  child: ProductDetailPage(productId: product.id),
+                  child: ProductDetailPage(
+                    productId: product.id,
+                    onAddToCart: onAddToCart,
+                  ),
                 ),
               ),
             );
