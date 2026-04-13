@@ -31,4 +31,14 @@ extension PackageModulesX on List<Module> {
   Module get productTests => firstWhere((m) => m.name == 'product_tests');
   /// Module getter for product_example
   Module get productExample => firstWhere((m) => m.name == 'product_example');
+  /// Module getter for cart_interface
+  Module get cartInterface => firstWhere((m) => m.name == 'cart_interface');
+  /// Module getter for cart_implementation
+  Module get cartImplementation => firstWhere((m) => m.name == 'cart_implementation');
+  /// Module getter for cart_testing
+  Module get cartTesting => firstWhere((m) => m.name == 'cart_testing');
+  /// Module getter for cart_tests
+  Module get cartTests => firstWhere((m) => m.name == 'cart_tests');
+  /// Module getter for cart_example
+  Module get cartExample => firstWhere((m) => m.name == 'cart_example');
 }

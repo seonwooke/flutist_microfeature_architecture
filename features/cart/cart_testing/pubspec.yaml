@@ -1,0 +1,11 @@
+name: cart_testing
+description: A Flutter module
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+
+resolution: workspace

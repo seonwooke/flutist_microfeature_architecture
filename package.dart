@@ -18,5 +18,10 @@ final package = Package(
     Module(name: 'product_testing'),
     Module(name: 'product_tests'),
     Module(name: 'product_example'),
+    Module(name: 'cart_interface'),
+    Module(name: 'cart_implementation'),
+    Module(name: 'cart_testing'),
+    Module(name: 'cart_tests'),
+    Module(name: 'cart_example'),
   ],
 );

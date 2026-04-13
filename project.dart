@@ -95,5 +95,45 @@ final project = Project(
         package.modules.productTesting,
       ],
     ),
+    Module(
+      name: 'cart_interface',
+      dependencies: [],
+      devDependencies: [],
+      modules: [],
+    ),
+    Module(
+      name: 'cart_implementation',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.cartInterface,
+      ],
+    ),
+    Module(
+      name: 'cart_testing',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.cartInterface,
+      ],
+    ),
+    Module(
+      name: 'cart_tests',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.cartImplementation,
+        package.modules.cartTesting,
+      ],
+    ),
+    Module(
+      name: 'cart_example',
+      dependencies: [],
+      devDependencies: [],
+      modules: [
+        package.modules.cartImplementation,
+        package.modules.cartTesting,
+      ],
+    ),
   ],
 );

@@ -27,3 +27,8 @@ workspace:
   - features/product/product_implementation
   - features/product/product_tests
   - features/product/product_testing
+  - features/cart/cart_example
+  - features/cart/cart_interface
+  - features/cart/cart_implementation
+  - features/cart/cart_tests
+  - features/cart/cart_testing
